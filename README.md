@@ -6,19 +6,31 @@ About
 
 This repository hosts unit tests for RISC-V processors.
 
-Building from repository
+Prerequisites
+--------------
+Set up cross-compile environment.
+
+        $ sudo apt-get install g++-riscv64-linux-gnu binutils-riscv64-linux-gnu
+
+Set environment variable AM_HOME to the absolute path of [AM](https://github.com/NJU-ProjectN/abstract-machine), click [here](https://www.bilibili.com/video/BV1PU4y1V7X3?p=7) to learn more about AM.
+
+        $ git clone -b master https://github.com/NJU-ProjectN/abstract-machine.git
+        $ echo export AM_HOME=$(pwd)/abstract-machine >> ~/.bashrc
+        $ source ~/.bashrc
+
+Try
+
+        $ echo $AM_HOME
+        $ cd $AM_HOME
+to check whether the environment variable `AM_HOME` get the right path.
+
+
+Running the tests
 -----------------------------
 
-We assume that the RISCV environment variable is set to the RISC-V tools
-install path, and that the riscv-gnu-toolchain package is installed.
 
-    $ git clone https://github.com/riscv/riscv-tests
-    $ cd riscv-tests
-    $ git submodule update --init --recursive
-    $ autoconf
-    $ ./configure --prefix=$RISCV/target
-    $ make
-    $ make install
+        $ cd riscv-tests
+        $ make ARCH=riscv64-nemu
 
 The rest of this document describes the format of test programs for the RISC-V
 architecture.
