@@ -17,13 +17,24 @@ endif
 EXCLUDE_SSRCS := $(foreach f,$(EXCLUDE_TEST),$(wildcard isa/*/$(f).S))
 ORIGINAL_SSRCS := $(filter-out $(EXCLUDE_SSRCS),$(ORIGINAL_SSRCS))
 
+RESULT = .result
+$(shell > $(RESULT))
+
+COLOR_RED   = \033[1;31m
+COLOR_GREEN = \033[1;32m
+COLOR_NONE  = \033[0m
+
 SLASH_REPLACER = _SLASH_
+
+define shortform
+  $(subst isa/,,$(subst $(SLASH_REPLACER),/,$(1)))
+endef
 
 LINK_SSRCS = $(subst /,$(SLASH_REPLACER),$(ORIGINAL_SSRCS))
 ALL = $(basename $(LINK_SSRCS))
 
 all: $(addprefix Makefile-, $(ALL))
-	@echo "test list:" $(subst isa/,,$(subst $(SLASH_REPLACER),/,$(ALL)))
+	@echo "test list:" $(call shortform,$(ALL))
 
 $(ALL): %: Makefile-%
 
@@ -33,10 +44,18 @@ build/%.S:
 
 Makefile-%: build/%.S
 	@/bin/echo -e "NAME = $*\nSRCS = $<\nINC_PATH += $(shell pwd)/env/p $(shell pwd)/isa/macros/scalar\ninclude $${AM_HOME}/Makefile" > $@
-	-@make -s -f $@ ARCH=$(ARCH) $(MAKECMDGOALS)
+	@if make -s -f $@ ARCH=$(ARCH) $(MAKECMDGOALS); then \
+		printf "[%14s] $(COLOR_GREEN)PASS!$(COLOR_NONE)\n" $(call shortform,$*) >> $(RESULT); \
+	else \
+		printf "[%14s] $(COLOR_RED)FAIL!$(COLOR_NONE)\n" $(call shortform,$*) >> $(RESULT); \
+	fi
 	-@rm -f Makefile-$*
 
 run: all
+	@cat $(RESULT)
+	@rm $(RESULT)
+
+gdb: all
 
 clean:
 	rm -rf Makefile-* build/
