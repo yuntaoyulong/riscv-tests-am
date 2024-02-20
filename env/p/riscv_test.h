@@ -187,7 +187,7 @@ main:
           li a0, 0;                                                   \
           j halt
 
-#define TESTNUM gp
+#define TESTNUM x10
 #define RVTEST_FAIL                                                     \
           li a0, 1;                                                      \
           j halt

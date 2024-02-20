@@ -21,7 +21,7 @@ test_2:
   li  TESTNUM, 2
   li  ra, 0
 
-  jal x4, target_2
+  jal x8, target_2
 linkaddr_2:
   nop
   nop
@@ -29,8 +29,8 @@ linkaddr_2:
   j fail
 
 target_2:
-  la  x2, linkaddr_2
-  bne x2, x4, fail
+  la  x12, linkaddr_2
+  bne x12, x8, fail
 
   #-------------------------------------------------------------
   # Test delay slot instructions not executed nor bypassed

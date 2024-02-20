@@ -61,17 +61,17 @@ RVTEST_CODE_BEGIN
   # Test write-after-write hazard
   #-------------------------------------------------------------
 
-  TEST_CASE( 18, x2, 2, \
+  TEST_CASE( 18, x8, 2, \
     la  x5, tdat; \
-    lbu  x2, 0(x5); \
-    li  x2, 2; \
+    lbu  x8, 0(x5); \
+    li  x8, 2; \
   )
 
-  TEST_CASE( 19, x2, 2, \
+  TEST_CASE( 19, x8, 2, \
     la  x5, tdat; \
-    lbu  x2, 0(x5); \
+    lbu  x8, 0(x5); \
     nop; \
-    li  x2, 2; \
+    li  x8, 2; \
   )
 
   TEST_PASSFAIL
