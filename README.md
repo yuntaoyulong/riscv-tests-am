@@ -12,25 +12,31 @@ Set up cross-compile environment.
 
         $ sudo apt-get install g++-riscv64-linux-gnu binutils-riscv64-linux-gnu
 
-Set environment variable AM_HOME to the absolute path of [AM](https://github.com/NJU-ProjectN/abstract-machine), click [here](https://www.bilibili.com/video/BV1PU4y1V7X3?p=7) to learn more about AM.
+Set environment variable `AM_HOME` to the absolute path of [AM](https://github.com/NJU-ProjectN/abstract-machine), click [here](https://www.bilibili.com/video/BV1Vu4y1s73Y/) to learn more about AM.
 
-        $ git clone -b master https://github.com/NJU-ProjectN/abstract-machine.git
-        $ echo export AM_HOME=$(pwd)/abstract-machine >> ~/.bashrc
-        $ source ~/.bashrc
+```
+$ git clone -b master https://github.com/NJU-ProjectN/abstract-machine.git
+$ echo export AM_HOME=$(pwd)/abstract-machine >> ~/.bashrc
+$ source ~/.bashrc
+```
 
 Try
-
-        $ echo $AM_HOME
-        $ cd $AM_HOME
-to check whether the environment variable `AM_HOME` get the right path.
+```
+$ echo $AM_HOME
+$ cd $AM_HOME
+```
+to check whether the environment variable `AM_HOME` points to the right path.
 
 
 Running the tests
 -----------------------------
 
-
-        $ cd riscv-tests
-        $ make ARCH=riscv64-nemu
+```
+$ cd riscv-tests
+$ vim Makefile    # modify `TEST_ISA` and `EXCLUDE_TEST` if necessary
+$ make ARCH=riscv64-nemu run # run all testcases according to `TEST_ISA` and `EXCLUDE_TEST`
+$ make ARCH=riscv64-nemu ALL="addi lw" run   # only run the testcases for addi and lw
+```
 
 The rest of this document describes the format of test programs for the RISC-V
 architecture.
