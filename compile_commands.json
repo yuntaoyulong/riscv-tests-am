@@ -1,0 +1,74 @@
+[
+  {
+    "arguments": [
+      "/bin/riscv64-linux-gnu-gcc",
+      "-I/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/env/p",
+      "-I/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/isa/macros/scalar",
+      "-I/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/include",
+      "-I/home/aotianzhihuo/ysyx-workbench/abstract-machine/am/include/",
+      "-I/home/aotianzhihuo/ysyx-workbench/abstract-machine/klib/include/",
+      "-fno-pic",
+      "-march=rv64g",
+      "-mcmodel=medany",
+      "-mstrict-align",
+      "-march=rv32e_zicsr",
+      "-mabi=ilp32e",
+      "-O0",
+      "-c",
+      "-o",
+      "/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/build/riscv32e-ysyxsoc/isa/rv32ui/add.o",
+      "/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/isa/rv32ui/add.S"
+    ],
+    "directory": "/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am",
+    "file": "/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/isa/rv32ui/add.S",
+    "output": "/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/build/riscv32e-ysyxsoc/isa/rv32ui/add.o"
+  },
+  {
+    "arguments": [
+      "/bin/riscv64-linux-gnu-gcc",
+      "-I/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/env/p",
+      "-I/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/isa/macros/scalar",
+      "-I/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/include",
+      "-I/home/aotianzhihuo/ysyx-workbench/abstract-machine/am/include/",
+      "-I/home/aotianzhihuo/ysyx-workbench/abstract-machine/klib/include/",
+      "-fno-pic",
+      "-march=rv64g",
+      "-mcmodel=medany",
+      "-mstrict-align",
+      "-march=rv32e_zicsr",
+      "-mabi=ilp32e",
+      "-O0",
+      "-c",
+      "-o",
+      "/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/build/riscv32e-ysyxsoc/isa/rv32ui/addi.o",
+      "/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/isa/rv32ui/addi.S"
+    ],
+    "directory": "/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am",
+    "file": "/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/isa/rv32ui/addi.S",
+    "output": "/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/build/riscv32e-ysyxsoc/isa/rv32ui/addi.o"
+  },
+  {
+    "arguments": [
+      "/bin/riscv64-linux-gnu-gcc",
+      "-I/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/env/p",
+      "-I/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/isa/macros/scalar",
+      "-I/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/include",
+      "-I/home/aotianzhihuo/ysyx-workbench/abstract-machine/am/include/",
+      "-I/home/aotianzhihuo/ysyx-workbench/abstract-machine/klib/include/",
+      "-fno-pic",
+      "-march=rv64g",
+      "-mcmodel=medany",
+      "-mstrict-align",
+      "-march=rv32e_zicsr",
+      "-mabi=ilp32e",
+      "-O0",
+      "-c",
+      "-o",
+      "/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/build/riscv32e-ysyxsoc/isa/rv32ui/and.o",
+      "/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/isa/rv32ui/and.S"
+    ],
+    "directory": "/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am",
+    "file": "/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/isa/rv32ui/and.S",
+    "output": "/home/aotianzhihuo/ysyx-workbench/abstract-machine/riscv-tests-am/build/riscv32e-ysyxsoc/isa/rv32ui/and.o"
+  }
+]
